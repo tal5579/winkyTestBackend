@@ -4,10 +4,11 @@ import { InMemoryStorage } from "./InMemoryStorage";
 import bodyParser from "body-parser";
 import { JWTHelper } from "./TokenParser";
 
+var cors = require('cors')
 const app: express.Application = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(cors());
 const httpHelper = new HTTPHelper();
 
 const jwtHelper = new JWTHelper();
